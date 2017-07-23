@@ -2,9 +2,9 @@
 <html>
 
 <head>
-<link type="text/css" rel="stylesheet" href="styles/materialize.css"  media="screen,projection"/>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 </head>
 
 <header class="header">
@@ -15,9 +15,28 @@
 <main class="main">
 
 <div class="container">
+	<input type='file' onchange="readURL(this);" />
+    <img id="blah" src="#" alt="your image" />
+</div>
 
+<div class="container">
+	<br>
+	<form>
+	Decrypt Text: <br>
+	<input type="text" id="decryptBox" name="decrypt"><br>
+	<button id="btnDecrypt" type="button">Decrypt</button> <br>
+	<br>Encrypt Text: <br>
+	<input type="text" id="encryptBox" name="encrypt"><br>
+	<button id="btnEncrypt" type="button">Encrypt</button>
+	</form>
 </div>
 
 </main>
+
+
+<script src="./app.js" async></script>
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 </html>
