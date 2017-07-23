@@ -139,17 +139,23 @@ function readURL(input) {
     document.getElementById('btnEncrypt').addEventListener('click', function() { 
 
         var encrpyptText = document.getElementById("encryptBox").value;
+        if (!document.getElementById("encryptBox").value){
+            alert("Field is empty - Please enter value")
+        } else {
         var encrypted = Cipher.toQWERTY(encrpyptText);
         alert("\""+encrpyptText+ "\"" + " encrypted is: " +encrypted);
-
+        }
     });
 
     document.getElementById('btnDecrypt').addEventListener('click', function() { 
 
         var decrpyptText = document.getElementById("decryptBox").value;
+        if (!document.getElementById("decryptBox").value){
+            alert("Field is empty - Please enter value")
+        } else {
         var decrypted = Cipher.toQWERTY(decrpyptText, true);
         alert("\""+decrpyptText+ "\"" + " decrypted is: " +decrypted);
-
+        }
     });
 
 
