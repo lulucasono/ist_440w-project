@@ -2,41 +2,58 @@
 <html>
 
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+          rel="stylesheet" type="text/css"/>
 </head>
 
 <header class="header">
-     <h1 class="header__title">Substitution Cipher Encryption</h1>
-       
+    <h1 class="header__title">Substitution Cipher Encryption</h1>
+
 </header>
 
 <main class="main">
 
-<div class="container">
-	<input type='file' onchange="readURL(this);" />
-    <img id="blah" src="#" alt="your image" />
-</div>
+    <div class="container">
+        <input type='file' onchange="readURL(this);"/>
+        <img id="blah" src="#" alt="your image"/>
+    </div>
 
-<div class="container">
-	<br>
-	<form>
-	Decrypt Text: <br>
-	<input type="text" id="decryptBox" name="decrypt"><br>
-	<button id="btnDecrypt" type="button">Decrypt</button> <br>
-	<br>Encrypt Text: <br>
-	<input type="text" id="encryptBox" name="encrypt"><br>
-	<button id="btnEncrypt" type="button">Encrypt</button>
-	</form>
-</div>
+    <div class="container">
+        <br>
+        <form>
+            Decrypt Text: <br>
+            <input type="text" id="decryptBox" name="decrypt"><br>
+            <button id="btnDecrypt" type="button">Decrypt</button>
+            <br>
+            <br>Encrypt Text: <br>
+            <input type="text" id="encryptBox" name="encrypt"><br>
+            <button id="btnEncrypt" type="button">Encrypt</button>
+            <br>
+            <br>Encrypt Text: <br>
+            <label for="vigenereBox"></label>Text</label>
+            <input type="text" id="vigenereBox" name="vigenereEncrypt"><br>
+            <label for="vigenereKeyBox"></label>Key</label>
+            <input type="text" id="vigenereKeyBox" name="vigenereKeyEncrypt"><br>
+            <button id="btnVigenereEncrypt" type="button">Encrypt With Key</button>
+            <br>Decrypt Text: <br>
+            <label for="dVigenereBox"></label>Encrypted Text</label>
+            <input type="text" id="dVigenereBox" name="vigenereDecrypt"><br>
+            <label for="dVigenereKeyBox"></label>Key</label>
+            <input type="text" id="dVigenereKeyBox" name="vigenereKeyDecrypt"><br>
+            <button id="btnVigenereDecrypt" type="button">Encrypt With Key</button>
+        </form>
+    </div>
 
-<div class="container">
-	<p>	Instructions: Text can be entered in the boxes to be encrypted or decrypted.</p>
+    <div class="container">
+        <p> Instructions: Text can be entered in the boxes to be encrypted or decrypted.</p>
 
-	<p> You can also upload an image of your own handwriting and use the 'Copyfish' Chrome extension to copy the image text. Once copied, you can paste the contents into the text boxes.</p>
-	<a href="https://chrome.google.com/webstore/detail/copyfish-%F0%9F%90%9F-free-ocr-soft/eenjdnjldapjajjofmldgmkjaienebbj?hl=en">Download Copyfish</a>
-</div>
+        <p> You can also upload an image of your own handwriting and use the 'Copyfish' Chrome extension to copy the
+            image text. Once copied, you can paste the contents into the text boxes.</p>
+        <a href="https://chrome.google.com/webstore/detail/copyfish-%F0%9F%90%9F-free-ocr-soft/eenjdnjldapjajjofmldgmkjaienebbj?hl=en">Download
+            Copyfish</a>
+    </div>
 
 </main>
 
