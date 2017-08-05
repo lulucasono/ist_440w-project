@@ -91,7 +91,7 @@ function readURL(input) {
 
 
             // Force the rotation an integer and within bounds
-            rotation = parseInt(rotation) % bound;
+            rotation = parseInt(rotation) % this.bound;
 
             // Might as well return the text if there's no change
             if(rotation === 0) return text;
@@ -101,7 +101,7 @@ function readURL(input) {
                 // Turn string to character codes
                 text.split('').map(function(v) {
                     // Return current character code + rotation
-                    return (v.charCodeAt() + rotation + bound) % bound;
+                    return (v.charCodeAt() + rotation + this.bound) % this.bound;
                 })
             );
         }
@@ -117,8 +117,7 @@ function readURL(input) {
          */
 
         keyRotate(text, key, reverse) {
-
-
+            let scope = this;
             // Create string from character codes
             return String.fromCharCode.apply(null,
                 // Turn string to character codes
@@ -130,7 +129,7 @@ function readURL(input) {
                     if(reverse) rotation = -rotation;
 
                     // Return current character code + rotation
-                    return (v.charCodeAt() + rotation + bound) % bound;
+                    return (v.charCodeAt() + rotation + scope.bound) % scope.bound;
                 })
             );
         }
@@ -145,23 +144,52 @@ function readURL(input) {
 
     document.getElementById('btnEncrypt').addEventListener('click', function() {
 
-        let encrpyptText = document.getElementById("encryptBox").value;
+        let encryptText = document.getElementById("encryptBox").value;
         if (!document.getElementById("encryptBox").value){
             alert("Field is empty - Please enter value")
         } else {
             let encrypted = cipher.toQWERTY(encrpyptText);
-            alert("\""+encrpyptText+ "\"" + " encrypted is: " +encrypted);
+            alert("\""+encryptText+ "\"" + " encrypted is: " +encrypted);
         }
     });
 
     document.getElementById('btnDecrypt').addEventListener('click', function() {
 
-        let decrpyptText = document.getElementById("decryptBox").value;
+        let decryptText = document.getElementById("decryptBox").value;
         if (!document.getElementById("decryptBox").value){
             alert("Field is empty - Please enter value")
         } else {
             let decrypted = cipher.toQWERTY(decrpyptText, true);
             alert("\""+decrpyptText+ "\"" + " decrypted is: " +decrypted);
+        }
+    });
+
+    document.getElementById('btnVigenereEncrypt').addEventListener('click', function() {
+
+        let encryptText = document.getElementById("vigenereBox").value;
+        let encryptKey = document.getElementById("vigenereKeyBox").value;
+        if (!document.getElementById("vigenereBox").value ){
+            alert("Text field is empty - Please enter value")
+        }else if(!document.getElementById("vigenereKeyBox").value){
+            alert("No key provided - Please enter value")
+        } else {
+            let encrypted = cipher.keyRotate(encryptText,encryptKey,false)
+            alert("\""+encryptText+ "\"" + " encrypted is: " +encrypted);
+        }
+    });
+
+
+    document.getElementById('btnVigenereDecrypt').addEventListener('click', function() {
+
+        let encryptText = document.getElementById("dVigenereBox").value;
+        let encryptKey = document.getElementById("dVigenereKeyBox").value;
+        if (!document.getElementById("dVigenereBox").value ){
+            alert("Text field is empty - Please enter value")
+        }else if(!document.getElementById("dVigenereKeyBox").value){
+            alert("No key provided - Please enter value")
+        } else {
+            let encrypted = cipher.keyRotate(encryptText,encryptKey,true)
+            alert("\""+encryptText+ "\"" + " encrypted is: " +encrypted);
         }
     });
 
